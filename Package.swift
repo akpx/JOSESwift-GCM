@@ -7,8 +7,11 @@ let package = Package(
     products: [
         .library(name: "JOSESwift", targets: ["JOSESwift"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.4.2"))
+    ],
     targets: [
+        .dependencies:["CryptoSwift"],
         .target(name: "JOSESwift", path: "JOSESwift")
     ],
     swiftLanguageVersions: [.v5])
